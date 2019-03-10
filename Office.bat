@@ -1,6 +1,6 @@
 @echo off
 color F0
-title 多合一 Office KMS 啟用小工具 By.Ray Ver.1903.10.2141
+title 多合一 Office KMS 啟用小工具 By.Ray Ver.1903.10.2150
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -31,7 +31,7 @@ if '%errorlevel%' NEQ '0' (
 cls
 echo ------------------------------------
 echo     多合一 Office KMS 啟用小工具
-echo          版本：1903.10.2141
+echo          版本：1903.10.2150
 echo ------------------------------------
 echo 請選擇 Office 版本:
 echo.
@@ -375,7 +375,7 @@ echo 正在設定 KMS Server...
 %systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:1688
 echo.
 echo 正在安裝產品金鑰...
-%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK
 echo.
 echo 正在啟用 Office...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /act
@@ -422,7 +422,7 @@ echo 正在設定 KMS Server...
 %systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:1688
 echo.
 echo 正在安裝產品金鑰...
-%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
 echo.
 echo 正在啟用 Office...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /act
