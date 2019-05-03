@@ -1,6 +1,6 @@
 @echo off 
 color F0
-title 多合一 Windows KMS 啟用小工具 By.Ray Ver.1903.04.0108
+title 多合一 Windows KMS 啟用小工具 By.Ray Ver.1905.03.1111
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -27,11 +27,15 @@ if '%errorlevel%' NEQ '0' (
     pushd "%CD%"
     CD /D "%~dp0"
 
+:SETSERVER
+SET KmsServer=KMS_SERVER_ADDRESS
+SET KmsPort=1688
+
 :menu
 cls
 echo -------------------------------------
 echo     多合一 Windows KMS 啟用小工具
-echo          版本：1903.04.0108
+echo          版本：1905.03.1111
 echo -------------------------------------
 echo 請選擇 Windows 版本:
 echo.
@@ -129,7 +133,7 @@ Goto menu
 :activation
 echo.
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B %systemroot%\system32\slmgr.vbs /skms KMS_IP_ADDRESS
+%systemroot%\system32\cscript //B %systemroot%\system32\slmgr.vbs /skms %KmsServer%:%KmsPort%
 echo.
 echo 正在啟用 Windows...
 %systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ato
