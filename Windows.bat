@@ -1,6 +1,6 @@
 @echo off 
 color F0
-title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2110.10.0352
+title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2110.03.0352
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo -------------------------------------
 echo     多合一 Windows KMS 啟用小工具
-echo          版本：2110.10.0352
+echo          版本：2110.03.0352
 echo -------------------------------------
 echo 請選擇 Windows 版本:
 echo.
