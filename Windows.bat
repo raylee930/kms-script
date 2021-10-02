@@ -1,6 +1,6 @@
 @echo off 
 color F0
-title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2110.10.0350
+title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2110.10.0352
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo -------------------------------------
 echo     多合一 Windows KMS 啟用小工具
-echo          版本：2110.10.0350
+echo          版本：2110.10.0352
 echo -------------------------------------
 echo 請選擇 Windows 版本:
 echo.
@@ -75,7 +75,6 @@ echo  33.Windows Server 2016 Essentials
 echo  34.Windows Server 2019 Standard
 echo  35.Windows Server 2019 Datacenter
 echo  36.Windows Server 2019 Essentials
-echo  35.Windows Server 2019 Datacenter
 echo  37.Windows Server 2022 Standard
 echo  38.Windows Server 2022 Datacenter
 echo.
