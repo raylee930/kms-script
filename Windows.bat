@@ -1,6 +1,6 @@
 @echo off 
 color F0
-title 多合一 Windows KMS 啟用小工具 By.Ray Ver.1905.03.1111
+title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2110.10.0350
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo -------------------------------------
 echo     多合一 Windows KMS 啟用小工具
-echo          版本：1905.03.1111
+echo          版本：2110.10.0350
 echo -------------------------------------
 echo 請選擇 Windows 版本:
 echo.
@@ -75,6 +75,9 @@ echo  33.Windows Server 2016 Essentials
 echo  34.Windows Server 2019 Standard
 echo  35.Windows Server 2019 Datacenter
 echo  36.Windows Server 2019 Essentials
+echo  35.Windows Server 2019 Datacenter
+echo  37.Windows Server 2022 Standard
+echo  38.Windows Server 2022 Datacenter
 echo.
 echo  i.查看目前啟用資訊
 echo  r.清除啟用資訊
@@ -124,6 +127,8 @@ IF /I '%select%'=='33' GOTO win2016ess
 IF /I '%select%'=='34' GOTO win2019std
 IF /I '%select%'=='35' GOTO win2019dc
 IF /I '%select%'=='36' GOTO win2019ess
+IF /I '%select%'=='37' GOTO win2022std
+IF /I '%select%'=='38' GOTO win2022dc
 
 echo 選擇錯誤，請重新選擇！ 
 echo 按任意鍵返回主選單
@@ -484,4 +489,22 @@ echo --------------------------------------
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk WVDHN-86M7X-466P6-VHXV7-YY726
+Goto activation
+
+:win2022std
+echo --------------------------------------
+echo 已選擇 Windows Server 2022 Standard
+echo --------------------------------------
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk VDYBN-27WPP-V4HQT-9VMD4-VMK7H
+Goto activation
+
+:win2022dc
+echo --------------------------------------
+echo 已選擇 Windows Server 2022 Datacenter
+echo --------------------------------------
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk WX4NM-KYWYW-QJJR4-XV3QB-6VM33
 Goto activation
