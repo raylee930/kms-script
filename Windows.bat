@@ -1,6 +1,6 @@
 @echo off 
 color F0
-title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2110.03.0352
+title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2112.25.2204
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo -------------------------------------
 echo     多合一 Windows KMS 啟用小工具
-echo          版本：2110.03.0352
+echo          版本：2112.25.2204
 echo -------------------------------------
 echo 請選擇 Windows 版本:
 echo.
@@ -49,34 +49,35 @@ echo   7.Windows 8 企業版
 echo   8.Windows 8.1 專業版
 echo   9.Windows 8.1 專業版 (含Media Center)
 echo  10.Windows 8.1 企業版
-echo  11.Windows 10 教育版
-echo  12.Windows 10 專業教育版
-echo  13.Windows 10 專業版
-echo  14.Windows 10 專業版工作站
-echo  15.Windows 10 企業版
-echo  16.Windows 10 企業版 LTSB 2015
-echo  17.Windows 10 企業版 LTSB 2016
-echo  18.Windows 10 企業版 LTSC 2019
-echo  19.Windows Server 2008 Standard
-echo  20.Windows Server 2008 Enterprise
-echo  21.Windows Server 2008 Datacenter
-echo  22.Windows Server 2008 R2 Standard
-echo  23.Windows Server 2008 R2 Enterprise
-echo  24.Windows Server 2008 R2 Datacenter
-echo  25.Windows Server 2012
-echo  26.Windows Server 2012 Server Standard
-echo  27.Windows Server 2012 Datacenter
-echo  28.Windows Server 2012 R2 Standard
-echo  29.Windows Server 2012 R2 Datacenter
-echo  30.Windows Server 2012 R2 Essentials
-echo  31.Windows Server 2016 Standard
-echo  32.Windows Server 2016 Datacenter
-echo  33.Windows Server 2016 Essentials
-echo  34.Windows Server 2019 Standard
-echo  35.Windows Server 2019 Datacenter
-echo  36.Windows Server 2019 Essentials
-echo  37.Windows Server 2022 Standard
-echo  38.Windows Server 2022 Datacenter
+echo  11.Windows 10/11 家用版
+echo  12.Windows 10/11 教育版
+echo  13.Windows 10/11 專業教育版
+echo  14.Windows 10/11 專業版
+echo  15.Windows 10/11 專業版工作站
+echo  16.Windows 10/11 企業版
+echo  17.Windows 10 企業版 LTSB 2015
+echo  18.Windows 10 企業版 LTSB 2016
+echo  19.Windows 10 企業版 LTSC 2019/2021
+echo  20.Windows Server 2008 Standard
+echo  21.Windows Server 2008 Enterprise
+echo  22.Windows Server 2008 Datacenter
+echo  23.Windows Server 2008 R2 Standard
+echo  24.Windows Server 2008 R2 Enterprise
+echo  25.Windows Server 2008 R2 Datacenter
+echo  26.Windows Server 2012
+echo  27.Windows Server 2012 Server Standard
+echo  28.Windows Server 2012 Datacenter
+echo  29.Windows Server 2012 R2 Standard
+echo  30.Windows Server 2012 R2 Datacenter
+echo  31.Windows Server 2012 R2 Essentials
+echo  32.Windows Server 2016 Standard
+echo  33.Windows Server 2016 Datacenter
+echo  34.Windows Server 2016 Essentials
+echo  35.Windows Server 2019 Standard
+echo  36.Windows Server 2019 Datacenter
+echo  37.Windows Server 2019 Essentials
+echo  38.Windows Server 2022 Standard
+echo  39.Windows Server 2022 Datacenter
 echo.
 echo  i.查看目前啟用資訊
 echo  r.清除啟用資訊
@@ -100,48 +101,37 @@ IF /I '%select%'=='7' GOTO win8ent
 IF /I '%select%'=='8' GOTO win81pro
 IF /I '%select%'=='9' GOTO win81prowmc
 IF /I '%select%'=='10' GOTO win81ent
-IF /I '%select%'=='11' GOTO win10edu
-IF /I '%select%'=='12' GOTO win10proedu
-IF /I '%select%'=='13' GOTO win10pro
-IF /I '%select%'=='14' GOTO win10prows
-IF /I '%select%'=='15' GOTO win10ent
-IF /I '%select%'=='16' GOTO win10ltsb2015
-IF /I '%select%'=='17' GOTO win10ltsb2016
-IF /I '%select%'=='18' GOTO win10ltsc2019
-IF /I '%select%'=='19' GOTO win2008std
-IF /I '%select%'=='20' GOTO win2008ent
-IF /I '%select%'=='21' GOTO win2008dc
-IF /I '%select%'=='22' GOTO win2008r2std
-IF /I '%select%'=='23' GOTO win2008r2ent
-IF /I '%select%'=='24' GOTO win2008r2dc
-IF /I '%select%'=='25' GOTO win2012
-IF /I '%select%'=='26' GOTO win2012std
-IF /I '%select%'=='27' GOTO win2012dc
-IF /I '%select%'=='28' GOTO win2012r2std
-IF /I '%select%'=='29' GOTO win2012r2dc
-IF /I '%select%'=='30' GOTO win2012r2ess
-IF /I '%select%'=='31' GOTO win2016std
-IF /I '%select%'=='32' GOTO win2016dc
-IF /I '%select%'=='33' GOTO win2016ess
-IF /I '%select%'=='34' GOTO win2019std
-IF /I '%select%'=='35' GOTO win2019dc
-IF /I '%select%'=='36' GOTO win2019ess
-IF /I '%select%'=='37' GOTO win2022std
-IF /I '%select%'=='38' GOTO win2022dc
+IF /I '%select%'=='11' GOTO win10home
+IF /I '%select%'=='12' GOTO win10edu
+IF /I '%select%'=='13' GOTO win10proedu
+IF /I '%select%'=='14' GOTO win10pro
+IF /I '%select%'=='15' GOTO win10prows
+IF /I '%select%'=='16' GOTO win10ent
+IF /I '%select%'=='17' GOTO win10ltsb2015
+IF /I '%select%'=='18' GOTO win10ltsb2016
+IF /I '%select%'=='19' GOTO win10ltsc2019
+IF /I '%select%'=='20' GOTO win2008std
+IF /I '%select%'=='21' GOTO win2008ent
+IF /I '%select%'=='22' GOTO win2008dc
+IF /I '%select%'=='23' GOTO win2008r2std
+IF /I '%select%'=='24' GOTO win2008r2ent
+IF /I '%select%'=='25' GOTO win2008r2dc
+IF /I '%select%'=='26' GOTO win2012
+IF /I '%select%'=='27' GOTO win2012std
+IF /I '%select%'=='28' GOTO win2012dc
+IF /I '%select%'=='29' GOTO win2012r2std
+IF /I '%select%'=='30' GOTO win2012r2dc
+IF /I '%select%'=='31' GOTO win2012r2ess
+IF /I '%select%'=='32' GOTO win2016std
+IF /I '%select%'=='33' GOTO win2016dc
+IF /I '%select%'=='34' GOTO win2016ess
+IF /I '%select%'=='35' GOTO win2019std
+IF /I '%select%'=='36' GOTO win2019dc
+IF /I '%select%'=='37' GOTO win2019ess
+IF /I '%select%'=='38' GOTO win2022std
+IF /I '%select%'=='39' GOTO win2022dc
 
 echo 選擇錯誤，請重新選擇！ 
-echo 按任意鍵返回主選單
-pause>nul
-Goto menu
-
-:activation
-echo.
-echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B %systemroot%\system32\slmgr.vbs /skms %KmsServer%:%KmsPort%
-echo.
-echo 正在啟用 Windows...
-%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ato
-echo.
 echo 按任意鍵返回主選單
 pause>nul
 Goto menu
@@ -256,9 +246,18 @@ echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk MHF9N-XY6XB-WVXMC-BTDCT-MKKG7
 Goto activation
 
+:win10home
+echo -------------------------
+echo 已選擇 Windows 10/11 家用版
+echo -------------------------
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99
+Goto activation
+
 :win10edu
 echo -------------------------
-echo 已選擇 Windows 10 教育版
+echo 已選擇 Windows 10/11 教育版
 echo -------------------------
 echo.
 echo 正在安裝產品金鑰...
@@ -267,7 +266,7 @@ Goto activation
 
 :win10proedu
 echo -----------------------------
-echo 已選擇 Windows 10 專業教育版
+echo 已選擇 Windows 10/11 專業教育版
 echo -----------------------------
 echo.
 echo 正在安裝產品金鑰...
@@ -276,7 +275,7 @@ Goto activation
 
 :win10pro
 echo -------------------------
-echo 已選擇 Windows 10 專業版
+echo 已選擇 Windows 10/11 專業版
 echo -------------------------
 echo.
 echo 正在安裝產品金鑰...
@@ -285,7 +284,7 @@ Goto activation
 
 :win10prows
 echo -------------------------------
-echo 已選擇 Windows 10 專業版工作站
+echo 已選擇 Windows 10/11 專業版工作站
 echo -------------------------------
 echo.
 echo 正在安裝產品金鑰...
@@ -294,7 +293,7 @@ Goto activation
 
 :win10ent
 echo -------------------------
-echo 已選擇 Windows 10 企業版
+echo 已選擇 Windows 10/11 企業版
 echo -------------------------
 echo.
 echo 正在安裝產品金鑰...
@@ -321,7 +320,7 @@ Goto activation
 
 :win10ltsc2019
 echo -----------------------------------
-echo 已選擇 Windows 10 企業版 LTSC 2019
+echo 已選擇 Windows 10 企業版 LTSC 2019/2021
 echo -----------------------------------
 echo.
 echo 正在安裝產品金鑰...
@@ -507,3 +506,16 @@ echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk WX4NM-KYWYW-QJJR4-XV3QB-6VM33
 Goto activation
+
+
+:activation
+echo.
+echo 正在設定 KMS Server...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /skms %KmsServer%:%KmsPort%
+echo.
+echo 正在啟用 Windows...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ato
+echo.
+echo 按任意鍵返回主選單
+pause>nul
+Goto menu
