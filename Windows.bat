@@ -1,6 +1,6 @@
 @echo off 
 color F0
-title 多合一 Windows KMS 啟用小工具 By.Ray Ver.2112.25.2204
+title 多合一 Windows KMS 啟用小工具 Version.2404.1
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo -------------------------------------
 echo     多合一 Windows KMS 啟用小工具
-echo          版本：2112.25.2204
+echo          版本：2404.1
 echo -------------------------------------
 echo 請選擇 Windows 版本:
 echo.
@@ -57,7 +57,7 @@ echo  15.Windows 10/11 專業版工作站
 echo  16.Windows 10/11 企業版
 echo  17.Windows 10 企業版 LTSB 2015
 echo  18.Windows 10 企業版 LTSB 2016
-echo  19.Windows 10 企業版 LTSC 2019/2021
+echo  19.Windows 10 企業版 LTSC 2019/2021/2024
 echo  20.Windows Server 2008 Standard
 echo  21.Windows Server 2008 Enterprise
 echo  22.Windows Server 2008 Datacenter
@@ -78,6 +78,11 @@ echo  36.Windows Server 2019 Datacenter
 echo  37.Windows Server 2019 Essentials
 echo  38.Windows Server 2022 Standard
 echo  39.Windows Server 2022 Datacenter
+echo  40.Windows Server 2022 Azure
+echo  41.Windows Server 2025 Standard
+echo  42.Windows Server 2025 Datacenter
+echo  43.Windows Server 2025 Azure
+
 echo.
 echo  i.查看目前啟用資訊
 echo  r.清除啟用資訊
@@ -130,6 +135,10 @@ IF /I '%select%'=='36' GOTO win2019dc
 IF /I '%select%'=='37' GOTO win2019ess
 IF /I '%select%'=='38' GOTO win2022std
 IF /I '%select%'=='39' GOTO win2022dc
+IF /I '%select%'=='40' GOTO win2022azure
+IF /I '%select%'=='41' GOTO win2025std
+IF /I '%select%'=='42' GOTO win2025dc
+IF /I '%select%'=='43' GOTO win2025azure
 
 echo 選擇錯誤，請重新選擇！ 
 echo 按任意鍵返回主選單
@@ -320,7 +329,7 @@ Goto activation
 
 :win10ltsc2019
 echo -----------------------------------
-echo 已選擇 Windows 10 企業版 LTSC 2019/2021
+echo 已選擇 Windows 10 企業版 LTSC 2019/2021/2024
 echo -----------------------------------
 echo.
 echo 正在安裝產品金鑰...
@@ -505,6 +514,42 @@ echo --------------------------------------
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk WX4NM-KYWYW-QJJR4-XV3QB-6VM33
+Goto activation
+
+:win2022azure
+echo --------------------------------------
+echo 已選擇 Windows Server 2022 Azure
+echo --------------------------------------
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk NTBV8-9K7Q8-V27C6-M2BTV-KHMXV
+Goto activation
+
+:win2025std
+echo --------------------------------------
+echo 已選擇 Windows Server 2025 Standard
+echo --------------------------------------
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk TVRH6-WHNXV-R9WG3-9XRFY-MY832
+Goto activation
+
+:win2025dc
+echo --------------------------------------
+echo 已選擇 Windows Server 2025 Datacenter
+echo --------------------------------------
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk D764K-2NDRG-47T6Q-P8T8W-YP6DF
+Goto activation
+
+:win2025azure
+echo --------------------------------------
+echo 已選擇 Windows Server 2025 Azure
+echo --------------------------------------
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ipk XGN3F-F394H-FD2MY-PP6FD-8MCRC
 Goto activation
 
 
