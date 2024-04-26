@@ -1,6 +1,6 @@
 @echo off
 color F0
-title 多合一 Office KMS 啟用小工具 By.Ray Ver.2110.07.0014
+title 多合一 Office KMS 啟用小工具  Ver.2404.1
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo ------------------------------------
 echo     多合一 Office KMS 啟用小工具
-echo          版本：2110.07.0014
+echo            版本：2404.1
 echo ------------------------------------
 echo 請選擇 Office 版本:
 echo.
@@ -49,6 +49,7 @@ echo  7.Office 2019 Standard
 echo  8.Office 2019 Professional Plus
 echo  9.Office 2021 LTSC Standard
 echo  10.Office 2021 LTSC Professional Plus
+echo  11.Office 2024 LTSC Professional Plus
 echo.
 echo  q.結束
 echo.
@@ -67,6 +68,7 @@ IF /I '%select%'=='7' GOTO office2019std
 IF /I '%select%'=='8' GOTO office2019proplus
 IF /I '%select%'=='9' GOTO office2021std
 IF /I '%select%'=='10' GOTO office2021proplus
+IF /I '%select%'=='11' GOTO office2024proplus
 IF /I '%select%'=='q' GOTO quit
 
 echo 選擇錯誤，請重新選擇！ 
@@ -94,8 +96,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" goto office2010stdx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /inpkey:V7QKV-4XVVR-XYV4D-F7DFM-8R6BM
@@ -117,8 +119,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /inpkey:V7QKV-4XVVR-XYV4D-F7DFM-8R6BM
@@ -141,8 +143,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" goto office2010ppx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office14\ospp.vbs" /inpkey:VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB
@@ -164,8 +166,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office14\ospp.vbs" /inpkey:VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB
@@ -189,8 +191,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" goto office2013stdx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /inpkey:KBKQT-2NMXY-JJWGP-M62JB-92CD4
@@ -212,8 +214,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /inpkey:KBKQT-2NMXY-JJWGP-M62JB-92CD4
@@ -236,8 +238,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" goto office2013ppx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office15\ospp.vbs" /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT
@@ -259,8 +261,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office15\ospp.vbs" /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT
@@ -284,8 +286,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2016stdx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM
@@ -307,8 +309,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:JNRGM-WHDWX-FJJG3-K47QV-DRTFM
@@ -331,8 +333,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2016ppx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
@@ -354,8 +356,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
@@ -379,8 +381,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2019stdx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK
@@ -402,8 +404,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK
@@ -426,8 +428,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2019ppx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
@@ -449,8 +451,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
@@ -473,8 +475,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2021stdx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:KDX7X-BNVR8-TXXGX-4Q7Y8-78RV3
@@ -496,8 +498,8 @@ echo ----------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:KDX7X-BNVR8-TXXGX-4Q7Y8-78RV3
@@ -520,8 +522,8 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2021ppx86
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
@@ -543,8 +545,55 @@ echo -------------------------------------
 echo.
 if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
 echo 正在設定 KMS Server...
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
-%systemroot%\system32\cscript //B "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+echo.
+echo 正在啟用 Office...
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /act
+echo.
+echo 處理完成!
+echo.
+echo 按任意鍵返回主選單
+pause>nul
+Goto menu
+REM ----- Office 2021 Professional Plus -----
+
+REM ----- Office 2024 Professional Plus -----
+:office2024proplus
+echo -------------------------------------
+echo 已選擇 Office 2024 Professional Plus
+echo -------------------------------------
+echo.
+if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2024ppx86
+echo 正在設定 KMS Server...
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:2TDPW-NDQ7G-FMG99-DXQ7M-TX3T2
+echo.
+echo 正在啟用 Office...
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /act
+echo.
+echo 處理完成!
+echo.
+echo 按任意鍵返回主選單
+pause>nul
+Goto menu
+
+:office2024ppx86
+cls
+echo -------------------------------------
+echo 已選擇 Office 2024 Professional Plus
+echo -------------------------------------
+echo.
+if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
+echo 正在設定 KMS Server...
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
 echo.
 echo 正在安裝產品金鑰...
 %systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
