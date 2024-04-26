@@ -606,4 +606,4 @@ echo.
 echo 按任意鍵返回主選單
 pause>nul
 Goto menu
-REM ----- Office 2021 Professional Plus -----
+REM ----- Office 2024 Professional Plus -----
