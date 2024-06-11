@@ -1,6 +1,6 @@
 @echo off
 color F0
-title 多合一 Office KMS 啟用小工具  Ver.2404.1
+title 多合一 Office KMS 啟用小工具  Ver.2406.1
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo ------------------------------------
 echo     多合一 Office KMS 啟用小工具
-echo            版本：2404.1
+echo            版本：2406.1
 echo ------------------------------------
 echo 請選擇 Office 版本:
 echo.
@@ -49,7 +49,8 @@ echo  7.Office 2019 Standard
 echo  8.Office 2019 Professional Plus
 echo  9.Office 2021 LTSC Standard
 echo  10.Office 2021 LTSC Professional Plus
-echo  11.Office 2024 LTSC Professional Plus
+echo  11.Office 2024 LTSC Standard
+echo  12.Office 2024 LTSC Professional Plus
 echo.
 echo  q.結束
 echo.
@@ -68,7 +69,8 @@ IF /I '%select%'=='7' GOTO office2019std
 IF /I '%select%'=='8' GOTO office2019proplus
 IF /I '%select%'=='9' GOTO office2021std
 IF /I '%select%'=='10' GOTO office2021proplus
-IF /I '%select%'=='11' GOTO office2024proplus
+IF /I '%select%'=='11' GOTO office2024stdplus
+IF /I '%select%'=='12' GOTO office2024proplus
 IF /I '%select%'=='q' GOTO quit
 
 echo 選擇錯誤，請重新選擇！ 
@@ -560,6 +562,53 @@ echo 按任意鍵返回主選單
 pause>nul
 Goto menu
 REM ----- Office 2021 Professional Plus -----
+
+REM ----- Office 2024 Standard-----
+:office2024stdplus
+echo -------------------------------------
+echo 已選擇 Office 2024 Standard
+echo -------------------------------------
+echo.
+if NOT EXIST "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" goto office2024stdx86
+echo 正在設定 KMS Server...
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /inpkey:GVG6N-6WCHH-K2MVP-RQ78V-3J7GJ
+echo.
+echo 正在啟用 Office...
+%systemroot%\system32\cscript "%ProgramFiles%\Microsoft Office\office16\ospp.vbs" /act
+echo.
+echo 處理完成!
+echo.
+echo 按任意鍵返回主選單
+pause>nul
+Goto menu
+
+:office2024stdx86
+cls
+echo -------------------------------------
+echo 已選擇 Office 2024 Standard
+echo -------------------------------------
+echo.
+if NOT EXIST "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" goto error
+echo 正在設定 KMS Server...
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /sethst:%KmsServer%
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /setprt:%KmsPort%
+echo.
+echo 正在安裝產品金鑰...
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /inpkey:GVG6N-6WCHH-K2MVP-RQ78V-3J7GJ
+echo.
+echo 正在啟用 Office...
+%systemroot%\system32\cscript "%ProgramFiles(x86)%\Microsoft Office\office16\ospp.vbs" /act
+echo.
+echo 處理完成!
+echo.
+echo 按任意鍵返回主選單
+pause>nul
+Goto menu
+REM ----- Office 2024 Standard -----
 
 REM ----- Office 2024 Professional Plus -----
 :office2024proplus
