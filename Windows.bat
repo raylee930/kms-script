@@ -1,6 +1,6 @@
 @echo off 
 color F0
-title 多合一 Windows KMS 啟用小工具 Version.2404.1
+title 多合一 Windows KMS 啟用小工具 Version.2406.1
 
 :-------------------------------------
 IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
@@ -35,7 +35,7 @@ SET KmsPort=1688
 cls
 echo -------------------------------------
 echo     多合一 Windows KMS 啟用小工具
-echo          版本：2404.1
+echo             版本：2406.1
 echo -------------------------------------
 echo 請選擇 Windows 版本:
 echo.
@@ -158,7 +158,9 @@ Goto menu
 :reset
 %systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /upk
 %systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /ckms
+%systemroot%\system32\cscript %systemroot%\system32\slmgr.vbs /rearm
 echo.
+echo 重新啟動後生效
 echo 按任意鍵返回主選單
 pause>nul
 Goto menu
